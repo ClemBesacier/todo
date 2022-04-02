@@ -8,7 +8,6 @@ import { useState } from 'react';
 // @TODO : 
 // Faire un onglet All, active, complete
 // Ajouter un ordre de priorité aux listes
-// Supprimer un item
 // Modification d'un item
 // Créer un tableau de liste qui contiendront des items (tableau de tableau : une liste contient des items)
 // Supprimer une liste
@@ -44,13 +43,6 @@ function App() {
         setContentNew('');
     }
 
-    const removeItem = (indexRemove) => {
-        const newItems = [...items];
-        newItems.splice(indexRemove, 1);
-        setItems(newItems);
-    };
-
-
   // .map : itère dans le tableau et à chaqud itération je rend un composant Item
     return (
         <div className="App">
@@ -65,7 +57,6 @@ function App() {
                         <button onClick={hundlSubmit}>➕</button>
                     </div>
                     {items.map(renderState)}
-                    <button onClick={removeItem}>🗑</button>
                 </section>
             </div>
         </div>
