@@ -1,0 +1,10 @@
+@import './_variables.scss';
+
+header.mainHeader {
+    margin-bottom: 70px;
+    h1 {
+        color: $greyLight;
+        opacity: 0.7;
+        font-weight: 400;
+    }
+}

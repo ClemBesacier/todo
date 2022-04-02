@@ -1,0 +1,57 @@
+@import './_variables.scss';
+@import './Header.scss';
+@import './Item.scss';
+
+
+html {
+    overflow-x: hidden;
+    margin: 0;
+    width: 100%;
+}
+body {
+    font-family: 'nunito', sans-serif;
+    background-color: $greyDark;
+    overflow-x: hidden;
+    margin: 0;
+    width: 100%;
+}
+
+.containerApp {
+    max-width: 1100px;
+    margin: 0 auto;
+    
+    .App-header {
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+section.items {
+    .addItem {
+        position: relative;
+        margin-bottom: 50px;
+        input[type="text"] {
+            border: none;
+            background-color: inherit;
+            border-bottom: 2px solid $greyLight;
+            width: 100%;
+            padding: 10px 5px 15px;
+            font-size: 16px;
+            color: $greyLight;
+            outline: none;
+            &::placeholder {
+                color: $greyLight;
+                padding: 10px 5px 15px;
+                font-size: 16px;
+            }
+        }
+        button {
+            border: none;
+            position: absolute;
+            right: -10px;
+            bottom: 0;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@import './_variables.scss';
+
+.itemToDo {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba($greyLight, 0.5);
+    margin-bottom: 15px;
+    position: relative;
+    p {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        color: $greyLight;
+        margin: 0;
+        &::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border: 1px solid $greyLight;
+            position: absolute;
+            left: 0;
+            top: -1px;
+            border-radius: 50%;
+            padding: 2px;
+        }
+        &.checked {
+            text-decoration: line-through;
+            color: $green;
+            &::before {
+                content: url(./check.svg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $green;
+            }
+        }
+    }
+    &.deleted {
+        display: none;
+    }
+    .deletePicto {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        cursor: pointer;
+    }
+}
+  
