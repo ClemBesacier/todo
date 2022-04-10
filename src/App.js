@@ -16,7 +16,8 @@ import { useState } from 'react';
 
 function App() {
     
-    const [items, setItems] = useState(['Faire les courses', 'Mettre de l\'essence', 'Mettre mon réveil', 'Mettre à miam au chat', 'Faire le ménage']);
+    // const [items, setItems] = useState(['Faire les courses', 'Mettre de l\'essence', 'Mettre mon réveil', 'Mettre à miam au chat', 'Faire le ménage']);
+    const [items, setItems] = useState([]);
     const [contentNew, setContentNew] = useState('');
 
     // récupère les éléments du tableau
@@ -57,6 +58,7 @@ function App() {
                         <button onClick={hundlSubmit}>➕</button>
                     </div>
                     {items.map(renderState)}
+                    {/* <Item /> */}
                 </section>
             </div>
         </div>

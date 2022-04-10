@@ -5,14 +5,8 @@
     border-bottom: 1px solid rgba($greyLight, 0.5);
     margin-bottom: 15px;
     position: relative;
-    p {
-        position: relative;
-        padding-left: 30px;
-        cursor: pointer;
-        color: $greyLight;
-        margin: 0;
-        &::before {
-            content: "";
+    .item {
+        span {
             width: 12px;
             height: 12px;
             border: 1px solid $greyLight;
@@ -21,25 +15,69 @@
             top: 2px;
             border-radius: 50%;
             padding: 2px;
-        }
-        &.checked {
-            text-decoration: line-through;
-            color: $green;
-            &::before {
-                content: url(./check.svg);
+            cursor: pointer;
+            &.checked {
+                text-decoration: line-through;
+                color: $green;
+                border: 1px solid $green;
+                background-image: url(./check.svg);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 border: 1px solid $green;
+                background-repeat: no-repeat;
+                background-position: center;
             }
+        }
+    }
+    p {
+        padding-left: 30px;
+        color: $greyLight;
+        margin: 0;
+        &.onChange {
+            opacity: 0;
         }
     }
     &.deleted {
         display: none;
     }
+    #inputValue {
+        &.show {
+            opacity: 1;
+            pointer-events: inherit;
+        }
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+        }
+    }
+    #itemChange {
+        background-color: inherit;
+        border: none;
+        color: white;
+        font-size: 16px;
+        margin-left: 30px;
+        opacity: 0;
+        top: 0;
+        position: absolute;
+        width: 90%;
+        pointer-events: none;
+        &.show {
+            opacity: 1;
+            pointer-events: inherit;
+            position: inherit;
+        }
+    }
     .deletePicto {
         position: absolute;
         right: 0;
+        top: 5px;
+        cursor: pointer;
+    }
+    .modifyPicto {
+        position: absolute;
+        right: 35px;
         top: 5px;
         cursor: pointer;
     }
