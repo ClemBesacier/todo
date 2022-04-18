@@ -1,6 +1,6 @@
 // Importe juste usestate de react
 import { useState } from 'react'; 
-import App from '../App';
+// import App from '../App';
 
 function Item(props) {
     // on instancie usestate

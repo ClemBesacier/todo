@@ -1,0 +1,59 @@
+@import './_variables.scss';
+@import './Header.scss';
+@import './Item.scss';
+
+.lists {
+    background-color: $greyLight;
+    width: 20%;
+    padding: 50px;
+    height: 100vh;
+    .addList {
+        margin-bottom: 30px;
+        input {
+            border: none;
+            padding: 10px;
+            width: 75%;
+        }
+        button {
+            border: none;
+            background-color: white;
+            border-left: 1px solid $greyDark;
+            padding: 9px;
+            width: 16%;
+        }
+    }
+    .eachList {
+        .list {
+            padding: 10px;
+            background-color: rgba($greyDark, 0.1);
+            border-radius: 6px;
+            margin: 15px 0;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .containerApp {
+            max-width: 1100px;
+            margin: 0 auto;
+            // width: 80%;
+            padding: 0 50px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.5s ease;
+            position: fixed;
+            right: 30px;
+            top: 0;
+            left: calc(25% + 60px);
+            .App-header {
+                text-align: center;
+                font-size: 30px;
+            }
+        }
+        &.open {
+            .containerApp {
+                opacity: 1;
+                pointer-events: inherit;
+                transition: 0.5s ease;
+            }
+        }
+    }
+}
