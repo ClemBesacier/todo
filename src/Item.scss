@@ -17,17 +17,26 @@
             padding: 2px;
             cursor: pointer;
             &.checked {
-                text-decoration: line-through;
-                color: $green;
-                border: 1px solid $green;
-                background-image: url(./check.svg);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid $green;
-                background-repeat: no-repeat;
-                background-position: center;
+                
             }
+        }
+    }
+    &.checked {
+        span {
+            text-decoration: line-through;
+            color: $green;
+            border: 1px solid $green;
+            background-image: url(./check.svg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $green;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #inputValue {
+            text-decoration: line-through;
+            color: $green;
         }
     }
     p {

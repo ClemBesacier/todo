@@ -65,7 +65,7 @@
                     cursor: pointer;
                     opacity: 0.7;
                 }
-                input[type="radio"] + label:checked {
+                input[type="radio"]:checked + label {
                     text-decoration: underline;
                     opacity: 1;
                 }

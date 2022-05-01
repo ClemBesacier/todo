@@ -32,9 +32,9 @@ function Item(props) {
 
     if(!deleteItem) {
         return (
-            <section className="itemToDo">
+            <section className={done ? "itemToDo checked" : "itemToDo notChecked"}>
                 <div className="item">
-                    <span onClick={handlClick} className={done ? "checked" : "notChecked"}></span>
+                    <span onClick={handlClick}></span>
                     <p id="inputValue" onClick={handlInputChange}>{props.label}</p>
                     <input type="text" id="itemChange" placeholder="Ton item ..." value={newContentInput} className={editItem ? "onChange" : "notChanging"} />
                 </div>

@@ -42,24 +42,35 @@ function List(props) {
         setDone(!done);
     }
 
+    const notChecked = document.getElementsByClassName('notChecked');
+    const notCheckedParent = notChecked.parentNode;
+    const isChecked = document.getElementsByClassName('checked');
+    
     const handlCategAll = () => {
         const allItems = document.getElementById('allItems');
         if(allItems.checked == true) {
-            console.log('checked all');
+            for (var i=0;i<notChecked.length;i+=1){
+                notChecked[i].style.display = 'block';
+            }
         }
     }
 
     const handlCategDone = () => {
         const doneItems = document.getElementById('doneItems');
+        
         if(doneItems.checked == true) {
-            console.log('checked done');
+            for (var i=0;i<notChecked.length;i+=1){
+                notChecked[i].style.display = 'none';
+            }
         }
     }
 
     const handlCategDeleted = () => {
         const deletedItems = document.getElementById('deletedItems');
         if(deletedItems.checked == true) {
-            console.log('checked deleted');
+            for (var i=0;i<notChecked.length;i+=1){
+                notChecked[i].style.display = 'block';
+            }
         }
     }
 
@@ -78,11 +89,8 @@ function List(props) {
                     <label for="allItems" className='eachState'>Tous</label>
                     <input type="radio" id='doneItems' onClick={handlCategDone} value="Terminés" name="categItems" />
                     <label for="doneItems" className='eachState'>Terminés</label>
-                    <input type="radio" id='deletedItems' onClick={handlCategDeleted} value="Supprimés" name="categItems" />
-                    <label for="deletedItems" className='eachState'>Supprimés</label>
-                    {/* <div className='eachState' id='allItems' onClick={handlCategAll}>Tous</div> */}
-                    {/* <div className='eachState' id='doneItems' onClick={handlCategDone}>Terminés</div> */}
-                    {/* <div className='eachState' id='deletedItems' onClick={handlCategDeleted}>Supprimés</div> */}
+                    {/* <input type="radio" id='deletedItems' onClick={handlCategDeleted} value="Supprimés" name="categItems" />
+                    <label for="deletedItems" className='eachState'>Supprimés</label> */}
                 </form>
                 <section className="items">
                     <div className="addItem">
