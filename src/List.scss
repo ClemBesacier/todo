@@ -47,6 +47,29 @@
                 text-align: center;
                 font-size: 30px;
             }
+            .stateItems {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 50px;
+                input[type="radio"] {
+                    opacity: 0;
+                    pointer-events: none;
+                    position: absolute;
+                }
+                label.eachState {
+                    color: white;
+                    font-weight: 700;
+                    padding: 0 10px;
+                    font-size: 18px;
+                    cursor: pointer;
+                    opacity: 0.7;
+                }
+                input[type="radio"] + label:checked {
+                    text-decoration: underline;
+                    opacity: 1;
+                }
+            }
         }
         &.open {
             .containerApp {

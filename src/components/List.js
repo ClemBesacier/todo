@@ -14,11 +14,12 @@ function List(props) {
     const [contentNew, setContentNew] = useState('');
 
     // récupère les éléments du tableau
-    const renderState = (item) => {
+    const renderState = (item, categ) => {
         return (
             <Item label={item} />
         )
     }
+    console.log(renderState);
 
   // à chaque fois que le contenu de l'input change, on appelle cette fonction qui à l'argument event.target.value
   // event.target.value = texte du nouvel item
@@ -41,6 +42,27 @@ function List(props) {
         setDone(!done);
     }
 
+    const handlCategAll = () => {
+        const allItems = document.getElementById('allItems');
+        if(allItems.checked == true) {
+            console.log('checked all');
+        }
+    }
+
+    const handlCategDone = () => {
+        const doneItems = document.getElementById('doneItems');
+        if(doneItems.checked == true) {
+            console.log('checked done');
+        }
+    }
+
+    const handlCategDeleted = () => {
+        const deletedItems = document.getElementById('deletedItems');
+        if(deletedItems.checked == true) {
+            console.log('checked deleted');
+        }
+    }
+
     return (
         <section className={done ? "eachList open" : "eachList notOpen"}>
             <div className='list' onClick={handlClickOpen}>
@@ -50,14 +72,28 @@ function List(props) {
                 <header className="App-header">
                     <Header title={props.name} />
                 </header>
+                
+                <form action="#" className='stateItems'>
+                    <input type="radio" id='allItems' onClick={handlCategAll} value="Tous" name="categItems"/>
+                    <label for="allItems" className='eachState'>Tous</label>
+                    <input type="radio" id='doneItems' onClick={handlCategDone} value="Terminés" name="categItems" />
+                    <label for="doneItems" className='eachState'>Terminés</label>
+                    <input type="radio" id='deletedItems' onClick={handlCategDeleted} value="Supprimés" name="categItems" />
+                    <label for="deletedItems" className='eachState'>Supprimés</label>
+                    {/* <div className='eachState' id='allItems' onClick={handlCategAll}>Tous</div> */}
+                    {/* <div className='eachState' id='doneItems' onClick={handlCategDone}>Terminés</div> */}
+                    {/* <div className='eachState' id='deletedItems' onClick={handlCategDeleted}>Supprimés</div> */}
+                </form>
                 <section className="items">
                     <div className="addItem">
                         <input type="text" onChange={handlInputChange} value={contentNew} placeholder="Ajouter un item ..."/>
                         <button onClick={hundlSubmit}>➕</button>
                     </div>
-                    {items.map(renderState)}
                     {/* <Item /> */}
                 </section>
+                {items.map((item) => {
+                    return <Item key={item} label={item} />;
+                })}
             </div>
         </section>
     )
